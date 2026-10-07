@@ -36,7 +36,7 @@ Font Awesome, formulario con Formspree y mapa embebido de Google Maps.
 ## Deploy
 
 Publicado en GitHub Pages
-Enlace:https://github.com/dario666ar-dotcom/Pre-entrega-Talento-Tech
+Enlace https://github.com/dario666ar-dotcom/Pre-entrega-Talento-Tech
 
 ## Autor
 
