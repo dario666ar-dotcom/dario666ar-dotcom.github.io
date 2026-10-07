@@ -1,13 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LumenStore - Venta de insumos de iluminación en La Plata. Lámparas LED, tiras RGB, focos inteligentes y más.">
+  <title>LumenStore | Iluminación en La Plata</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, temporibus magni dolore officia tempora quia dolorum ducimus laborum nostrum delectus deserunt tempore voluptates amet accusantium.</p>
-    
-    <p>Tasller 06</p>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="contenedor barra-nav">
+      <div class="logo">Lumen<span>Store</span></div>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#resenas">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+
+    <!-- ---------- HERO / BANNER ---------- -->
+    <section class="hero">
+      <h1>Iluminá tus espacios con estilo</h1>
+      <p>Lámparas LED, tiras RGB y focos inteligentes. Envío a todo el país.</p>
+      <a href="#productos" class="boton">Ver productos</a>
+    </section>
+
+    <!-- ---------- PRODUCTOS (Flexbox) ---------- -->
+    <section id="productos" class="contenedor">
+      <h2 class="titulo-seccion">Nuestros productos</h2>
+
+      <div class="grilla-productos">
+
+        <!-- Card 1 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/1E1E2C/F2A83B?text=Lámpara+Colgante" alt="Lámpara colgante nórdica">
+          <div class="card-info">
+            <span class="categoria">Colgantes</span>
+            <h3>Lámpara Colgante Nórdica</h3>
+            <p>Estructura de metal negro mate con pantalla de madera natural.</p>
+            <span class="precio">$45.900</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/E91E63/FFFFFF?text=Tira+LED+RGB" alt="Tira LED RGB 5 metros">
+          <div class="card-info">
+            <span class="categoria">Tiras LED</span>
+            <h3>Tira LED RGB 5m</h3>
+            <p>16 millones de colores, control por app y control remoto incluido.</p>
+            <span class="precio">$18.500</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/2196F3/FFFFFF?text=Foco+Inteligente" alt="Foco LED inteligente WiFi">
+          <div class="card-info">
+            <span class="categoria">Focos</span>
+            <h3>Foco LED Inteligente WiFi</h3>
+            <p>Compatible con Alexa y Google Home. 9W RGB + CCT.</p>
+            <span class="precio">$12.900</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/F5F5F5/1E1E2C?text=Plafón+LED" alt="Plafón LED 24W">
+          <div class="card-info">
+            <span class="categoria">Plafones</span>
+            <h3>Plafón LED 24W</h3>
+            <p>Luz cálida, neutra o fría. Ideal para living o dormitorio.</p>
+            <span class="precio">$22.300</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/F2A83B/1E1E2C?text=Lámpara+Escritorio" alt="Lámpara de escritorio flexible">
+          <div class="card-info">
+            <span class="categoria">Escritorio</span>
+            <h3>Lámpara de Escritorio Flexible</h3>
+            <p>Cuello de ganso, 3 temperaturas de color y puerto USB.</p>
+            <span class="precio">$28.700</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <img src="https://placehold.co/400x300/FFC857/1E1E2C?text=Guirnalda" alt="Guirnalda cálida 10 metros">
+          <div class="card-info">
+            <span class="categoria">Decoración</span>
+            <h3>Guirnalda Cálida 10m</h3>
+            <p>20 luces estilo Edison para interior y exterior.</p>
+            <span class="precio">$9.800</span>
+            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ---------- RESEÑAS (Grid) ---------- -->
+    <section id="resenas" class="seccion-resenas">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Lo que dicen nuestros clientes</h2>
+
+        <div class="grilla-resenas">
+
+          <article class="resena">
+            <div class="avatar">MG</div>
+            <h3>María González</h3>
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Las tiras LED cambiaron por completo mi living. Excelente calidad y llegaron en 48 hs a La Plata."</p>
+          </article>
+
+          <article class="resena">
+            <div class="avatar">JP</div>
+            <h3>Juan Pérez</h3>
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Compré el foco inteligente y funciona perfecto con Alexa. La atención en el local fue muy buena."</p>
+          </article>
+
+          <article class="resena">
+            <div class="avatar">LR</div>
+            <h3>Lucía Ramírez</h3>
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p>"El plafón LED quedó impecable en el dormitorio. Muy buena relación precio-calidad."</p>
+          </article>
+
+          <article class="resena">
+            <div class="avatar">DM</div>
+            <h3>Diego Molina</h3>
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Volvería a comprar sin dudarlo. La lámpara de escritorio es tal cual la foto y muy práctica."</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CONTACTO (Form + Mapa) ---------- -->
+    <section id="contacto" class="contenedor">
+      <h2 class="titulo-seccion">Contactanos</h2>
+
+      <div class="bloque-contacto">
+
+        <!-- Columna izquierda: Formulario con Formspree -->
+        <div class="formulario-contacto">
+          <h3>Envianos tu consulta</h3>
+
+          <form action="https://formspree.io/f/mgaooyve" method="POST">
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+
+            <div class="campo">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="campo">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta..." required></textarea>
+            </div>
+
+            <button type="submit" class="boton-enviar">
+              <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+            </button>
+          </form>
+        </div>
+
+        <!-- Columna derecha: datos + mapa -->
+        <div class="info-contacto">
+          <h3>Local central en La Plata</h3>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i> Calle 12 e/ 50 y 54, Plaza Moreno - La Plata</li>
+            <li><i class="fa-solid fa-clock"></i> Lunes a sábados de 9 a 20 hs</li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+542214555000">+54 221 455-5000</a></li>
+            <li><i class="fa-brands fa-whatsapp"></i> <a href="tel:+5492214555001">+54 9 221 455-5001</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@lumenstore.com.ar">info@lumenstore.com.ar</a></li>
+          </ul>
+
+          <div class="mapa">
+            <iframe
+              src="https://www.google.com/maps?q=Plaza+Moreno,+La+Plata,+Buenos+Aires&z=16&output=embed"
+              title="Mapa de Plaza Moreno, centro de La Plata"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="contenedor footer-columnas">
+
+      <div class="columna">
+        <h4>LumenStore</h4>
+        <p>Tienda de insumos de iluminación en el centro de La Plata.
+           Proyecto educativo del curso de Desarrollo Web de TalentoTech.</p>
+      </div>
+
+      <div class="columna">
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> info@lumenstore.com.ar</li>
+          <li><i class="fa-solid fa-phone"></i> +54 221 455-5000</li>
+          <li><i class="fa-brands fa-whatsapp"></i> +54 9 221 455-5001</li>
+          <li><i class="fa-solid fa-location-dot"></i> Plaza Moreno, La Plata</li>
+        </ul>
+      </div>
+
+      <div class="columna">
+        <h4>Seguinos</h4>
+        <p>@lumenstore</p>
+        <div class="redes">
+          <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="copyright">&copy; 2026 LumenStore · La Plata, Argentina</p>
+  </footer>
+
 </body>
 </html>

@@ -1,0 +1,573 @@
+/* ============================================================
+   VARIABLES DE COLOR
+   ============================================================ */
+:root {
+  --dorado:      #F2A83B;
+  --dorado-osc:  #D98E1F;
+  --oscuro:      #1E1E2C;
+  --oscuro-2:    #2C2418;
+  --crema:       #FFF8EC;
+  --gris-claro:  #F4F4F6;
+  --gris-borde:  #E0E0E0;
+  --texto:       #222;
+}
+
+/* ============================================================
+   1) RESET BÁSICO
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--crema);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.25;
+}
+
+/* Utilidad: centra contenido y limita ancho */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================================
+   2) HEADER Y NAVEGACIÓN
+   ============================================================ */
+header {
+  background: var(--oscuro);
+  color: white;
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.barra-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--dorado);
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--dorado);
+}
+
+/* ============================================================
+   3) HERO — background con degradado + glow radial
+   ============================================================ */
+.hero {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(242, 168, 59, 0.35), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(255, 200, 87, 0.25), transparent 55%),
+    linear-gradient(135deg, var(--oscuro) 0%, var(--oscuro-2) 100%);
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 25px;
+  background: var(--dorado);
+  color: var(--oscuro);
+  padding: 13px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background: var(--dorado-osc);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   4) PRODUCTOS — Flexbox
+   ============================================================ */
+main {
+  padding-bottom: 50px;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin: 60px 0 35px;
+  font-size: 32px;
+  color: var(--oscuro);
+}
+
+.grilla-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  flex: 0 1 320px;
+  background: white;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.categoria {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dorado-osc);
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: var(--oscuro);
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--oscuro);
+  margin-top: auto;
+}
+
+.card button {
+  background: var(--oscuro);
+  color: white;
+  border: none;
+  padding: 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background: var(--dorado);
+  color: var(--oscuro);
+}
+
+/* ============================================================
+   5) RESEÑAS — Grid (fondo claro con patrón)
+   ============================================================ */
+.seccion-resenas {
+  background:
+    linear-gradient(rgba(30, 30, 44, 0.03) 1px, transparent 1px) 0 0 / 30px 30px,
+    linear-gradient(90deg, rgba(30, 30, 44, 0.03) 1px, transparent 1px) 0 0 / 30px 30px,
+    var(--gris-claro);
+  padding: 20px 0 70px;
+}
+
+.grilla-resenas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.resena {
+  background: white;
+  border-radius: 10px;
+  padding: 25px 22px;
+  border-top: 4px solid var(--dorado);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--oscuro);
+  color: var(--dorado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+}
+
+.resena h3 {
+  font-size: 16px;
+  color: var(--oscuro);
+}
+
+.estrellas {
+  color: var(--dorado);
+  font-size: 13px;
+}
+
+.resena p {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+/* ============================================================
+   6) CONTACTO — Formulario + Info + Mapa
+   ============================================================ */
+.bloque-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: stretch;
+  margin-bottom: 40px;
+}
+
+/* --- Formulario --- */
+.formulario-contacto {
+  flex: 1 1 380px;
+  background: white;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.formulario-contacto h3 {
+  font-size: 20px;
+  color: var(--oscuro);
+  margin-bottom: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--oscuro);
+}
+
+.campo input,
+.campo textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 11px 14px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  background: var(--crema);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 3px rgba(242, 168, 59, 0.2);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.boton-enviar {
+  width: 100%;
+  background: var(--oscuro);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.boton-enviar:hover {
+  background: var(--dorado);
+  color: var(--oscuro);
+}
+
+/* --- Info + Mapa --- */
+.info-contacto {
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-contacto h3 {
+  font-size: 20px;
+  color: var(--oscuro);
+}
+
+.info-contacto ul {
+  list-style: none;
+  background: white;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.info-contacto li {
+  padding: 7px 0;
+  font-size: 15px;
+}
+
+.info-contacto li i {
+  color: var(--dorado-osc);
+  width: 24px;
+}
+
+.info-contacto a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.info-contacto a:hover {
+  color: var(--dorado-osc);
+  text-decoration: underline;
+}
+
+.mapa {
+  flex: 1;
+  min-height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--gris-borde);
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  display: block;
+}
+
+/* ============================================================
+   7) FOOTER
+   ============================================================ */
+footer {
+  background: var(--oscuro);
+  color: #DDD;
+  padding: 45px 0 20px;
+}
+
+.footer-columnas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.columna {
+  flex: 1 1 250px;
+}
+
+.columna h4 {
+  color: white;
+  margin-bottom: 14px;
+  font-size: 17px;
+}
+
+.columna p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.columna ul {
+  list-style: none;
+}
+
+.columna li {
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+.columna li i {
+  color: var(--dorado);
+  width: 20px;
+}
+
+.columna a {
+  color: #DDD;
+  text-decoration: none;
+}
+
+.columna a:hover {
+  color: var(--dorado);
+}
+
+.redes {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.redes a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2A2A3C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.redes a:hover {
+  background: var(--dorado);
+  color: var(--oscuro);
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #3A3A4C;
+  margin-top: 35px;
+  padding-top: 18px;
+  font-size: 13px;
+  color: #999;
+}
+
+/* ============================================================
+   8) MEDIA QUERIES
+   ============================================================ */
+
+/* --- Tablets --- */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 34px; }
+  .titulo-seccion { font-size: 26px; }
+}
+
+/* --- Móviles grandes --- */
+@media (max-width: 768px) {
+
+  /* Header: menú se centra */
+  .barra-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Hero */
+  .hero { padding: 60px 20px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; }
+
+  /* Contacto: columnas apiladas */
+  .bloque-contacto {
+    flex-direction: column;
+  }
+
+  .formulario-contacto,
+  .info-contacto {
+    flex: 1 1 100%;
+  }
+
+  /* Reseñas: 1 columna */
+  .grilla-resenas {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-columnas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+}
+
+/* --- Móviles chicos --- */
+@media (max-width: 480px) {
+  .logo { font-size: 20px; }
+  .menu a { font-size: 14px; }
+  .hero h1 { font-size: 24px; }
+  .titulo-seccion { font-size: 22px; }
+  .card { flex: 1 1 100%; }
+}
