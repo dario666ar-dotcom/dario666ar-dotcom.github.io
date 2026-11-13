@@ -14,6 +14,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- CSS propio -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,7 +34,12 @@
           <li><a href="#productos">Productos</a></li>
           <li><a href="#resenas">Reseñas</a></li>
           <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+          <li>
+            <a href="#" id="abrir-carrito">
+              <i class="fa-solid fa-cart-shopping"></i> Carrito
+              <span id="contador-carrito" class="contador-carrito">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -40,95 +48,28 @@
   <!-- ==================== MAIN ==================== -->
   <main>
 
-    <!-- ---------- HERO / BANNER ---------- -->
+    <!-- ---------- HERO ---------- -->
     <section class="hero">
+      <div id="clima-la-plata" class="clima-widget">
+        <i id="clima-icono" class="fa-solid fa-cloud-sun clima-icono"></i>
+        <span id="clima-texto">Cargando clima...</span>
+      </div>
+
       <h1>Iluminá tus espacios con estilo</h1>
       <p>Lámparas LED, tiras RGB y focos inteligentes. Envío a todo el país.</p>
       <a href="#productos" class="boton">Ver productos</a>
     </section>
 
-    <!-- ---------- PRODUCTOS (Flexbox) ---------- -->
+    <!-- ---------- PRODUCTOS ---------- -->
     <section id="productos" class="contenedor">
       <h2 class="titulo-seccion">Nuestros productos</h2>
 
-      <div class="grilla-productos">
-
-        <!-- Card 1 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/1E1E2C/F2A83B?text=Lámpara+Colgante" alt="Lámpara colgante nórdica">
-          <div class="card-info">
-            <span class="categoria">Colgantes</span>
-            <h3>Lámpara Colgante Nórdica</h3>
-            <p>Estructura de metal negro mate con pantalla de madera natural.</p>
-            <span class="precio">$45.900</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/E91E63/FFFFFF?text=Tira+LED+RGB" alt="Tira LED RGB 5 metros">
-          <div class="card-info">
-            <span class="categoria">Tiras LED</span>
-            <h3>Tira LED RGB 5m</h3>
-            <p>16 millones de colores, control por app y control remoto incluido.</p>
-            <span class="precio">$18.500</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/2196F3/FFFFFF?text=Foco+Inteligente" alt="Foco LED inteligente WiFi">
-          <div class="card-info">
-            <span class="categoria">Focos</span>
-            <h3>Foco LED Inteligente WiFi</h3>
-            <p>Compatible con Alexa y Google Home. 9W RGB + CCT.</p>
-            <span class="precio">$12.900</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/F5F5F5/1E1E2C?text=Plafón+LED" alt="Plafón LED 24W">
-          <div class="card-info">
-            <span class="categoria">Plafones</span>
-            <h3>Plafón LED 24W</h3>
-            <p>Luz cálida, neutra o fría. Ideal para living o dormitorio.</p>
-            <span class="precio">$22.300</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/F2A83B/1E1E2C?text=Lámpara+Escritorio" alt="Lámpara de escritorio flexible">
-          <div class="card-info">
-            <span class="categoria">Escritorio</span>
-            <h3>Lámpara de Escritorio Flexible</h3>
-            <p>Cuello de ganso, 3 temperaturas de color y puerto USB.</p>
-            <span class="precio">$28.700</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="card">
-          <img src="https://placehold.co/400x300/FFC857/1E1E2C?text=Guirnalda" alt="Guirnalda cálida 10 metros">
-          <div class="card-info">
-            <span class="categoria">Decoración</span>
-            <h3>Guirnalda Cálida 10m</h3>
-            <p>20 luces estilo Edison para interior y exterior.</p>
-            <span class="precio">$9.800</span>
-            <button><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </article>
-
+      <div id="grilla-productos" class="grilla-productos">
+        <!-- Cards generadas por carrito.js -->
       </div>
     </section>
 
-    <!-- ---------- RESEÑAS (Grid) ---------- -->
+    <!-- ---------- RESEÑAS ---------- -->
     <section id="resenas" class="seccion-resenas">
       <div class="contenedor">
         <h2 class="titulo-seccion">Lo que dicen nuestros clientes</h2>
@@ -183,17 +124,16 @@
       </div>
     </section>
 
-    <!-- ---------- CONTACTO (Form + Mapa) ---------- -->
+    <!-- ---------- CONTACTO ---------- -->
     <section id="contacto" class="contenedor">
       <h2 class="titulo-seccion">Contactanos</h2>
 
       <div class="bloque-contacto">
 
-        <!-- Columna izquierda: Formulario con Formspree -->
         <div class="formulario-contacto">
           <h3>Envianos tu consulta</h3>
 
-          <form action="https://formspree.io/f/mgaooyve" method="POST">
+          <form id="form-contacto" action="https://formspree.io/f/mgaooyve" method="POST">
             <div class="campo">
               <label for="nombre">Nombre</label>
               <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
@@ -215,7 +155,6 @@
           </form>
         </div>
 
-        <!-- Columna derecha: datos + mapa -->
         <div class="info-contacto">
           <h3>Local central en La Plata</h3>
           <ul>
@@ -277,6 +216,33 @@
 
     <p class="copyright">&copy; 2026 LumenStore · La Plata, Argentina</p>
   </footer>
+
+  <!-- ==================== MODAL DEL CARRITO ==================== -->
+  <div id="modal-carrito" class="modal-carrito oculto">
+    <div class="modal-contenido">
+      <button id="cerrar-carrito" class="cerrar-modal" title="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3>Tu carrito (<span id="cantidad-carrito">0</span>)</h3>
+
+      <ul id="items-carrito">
+        <li class="carrito-vacio">Tu carrito está vacío.</li>
+      </ul>
+
+      <p class="modal-total">Total: <span id="total-carrito">$0</span></p>
+
+      <div class="modal-acciones">
+        <button id="btn-vaciar" class="btn-modal btn-vaciar">Vaciar carrito</button>
+        <button id="btn-pagar" class="btn-modal btn-pagar">Finalizar compra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: el orden importa -->
+  <script src="productos.js"></script>
+  <script src="carrito.js"></script>
+  <script src="extras.js"></script>
 
 </body>
 </html>
